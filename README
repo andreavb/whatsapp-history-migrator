@@ -1,19 +1,25 @@
+whatsapp-history-migrator
+=========================
 
-Step by step:
+Are you a WhatsApp user from Sao Paulo state? Are you tired of the duplicated histories after all SP numbers got an extra 9 before them? This tool will merge your old and new history files for each contact (eg, 551198765432 and 5511998765432)
 
-1) Backup WhatsApp history.
+=========================
+HOW TO:
+
+1) Backup WhatsApp history. To do so, go to Menu, Settings, Chat settings, Backup conversations.
 
 2) Move msgstore*.db.crypt files from your phone (Android: sdcard/WhatsApp/Databases / iOS: /data/data/com.whatsapp/databases) to whatsapp-history-migrator directory.
 
-3) Run:
+3) Make sure you have the following packages installed: python, sqlite3, openssl
+
+3) Run in your Linux terminal:
 $ ./migrate_all_dbs.sh
+This command will decrypt the history files, change the database to merge the history files and encrypt the files again.
 
 4) Move the generated msgstore*db.crypt files back to your phone, replacing the old ones.
 
+=========================
 KNOWN ISSUES:
 
 1) The only way I found to make WhatsApp load the migrated conversations was to uninstall WhatsApp just before step 4, and reinstalling it again after copying the files. WhatsApp will find the backuped files when it's reinstalled and it will ask you to recover them. If you find a smarter way, please contact me.
 
-2) The history of contacts you haven't talked in the last week will disappear from the main screen. But don't worry: once you contact them again, the whole history will be loaded.
-
-3) Lots of old formatted contacts, with no associated messages, will appear on your main screen. You can safetly delete them.
