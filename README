@@ -1,0 +1,19 @@
+
+Step by step:
+
+1) Backup WhatsApp history.
+
+2) Move msgstore*.db.crypt files from your phone (Android: sdcard/WhatsApp/Databases / iOS: /data/data/com.whatsapp/databases) to whatsapp-history-migrator directory.
+
+3) Run:
+$ ./migrate_all_dbs.sh
+
+4) Move the generated msgstore*db.crypt files back to your phone, replacing the old ones.
+
+KNOWN ISSUES:
+
+1) The only way I found to make WhatsApp load the migrated conversations was to uninstall WhatsApp just before step 4, and reinstalling it again after copying the files. WhatsApp will find the backuped files when it's reinstalled and it will ask you to recover them. If you find a smarter way, please contact me.
+
+2) The history of contacts you haven't talked in the last week will disappear from the main screen. But don't worry: once you contact them again, the whole history will be loaded.
+
+3) Lots of old formatted contacts, with no associated messages, will appear on your main screen. You can safetly delete them.
