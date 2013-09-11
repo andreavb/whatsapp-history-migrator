@@ -18,7 +18,7 @@ def individual_conditions(contact):
     """
 
     # general condition: contact is from SP state
-    condition = contact.startswith("551")
+    condition = contact.startswith("551") or contact.startswith("552")
     # condition_i1: contact hasn't been migrated yet
     condition_i1 = len(contact) == 27
     # condition_i2: contact is individual, not group
