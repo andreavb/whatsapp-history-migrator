@@ -1,7 +1,7 @@
 whatsapp-history-migrator
 =========================
 
-Are you a WhatsApp user from Sao Paulo state? Are you tired of the duplicated histories after all SP numbers got an extra 9 before them? This tool will merge your old and new history files for each contact (eg, 551198765432 and 5511998765432)
+Are you a WhatsApp user with contacts in Sao Paulo, Rio de Janeiro or Espírito Santo states? Are you tired of the duplicated histories after all SP/RJ/ES numbers got an extra 9 before them? This tool will merge your old and new history files for each contact (eg, 551198765432 and 5511998765432)
 
 =========================
 HOW TO:
@@ -12,7 +12,7 @@ HOW TO:
 
 3) Make sure you have the following packages installed: python, sqlite3, openssl
 
-3) Run in your Linux terminal:
+3) Run in your Linux or Mac OS terminal:
 $ ./migrate_all_dbs.sh
 This command will decrypt the history files, change the database to merge the history files and encrypt the files again.
 
